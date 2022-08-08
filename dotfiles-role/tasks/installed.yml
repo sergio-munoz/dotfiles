@@ -1,0 +1,5 @@
+- name: Install Stow
+  homebrew:
+    name: stow
+    state: present
+

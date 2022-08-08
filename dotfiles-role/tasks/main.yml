@@ -1,0 +1,24 @@
+---
+# tasks file for dotfiles-role
+- import_tasks: installed.yml
+  tags: ['never', 'install', 'install-pkg', 'deploy']
+
+- import_tasks: installed_module.yml
+  tags: ['never', 'install', 'install-module', 'deploy']
+
+- import_tasks: installed_package.yml
+  tags: ['never', 'install', 'install-package', 'deploy']
+
+- import_tasks: installed_oh_my_zsh.yml
+  tags: ['never', 'install-term', 'install-oh-my-ssh', 'deploy']
+
+- import_tasks: installed_git_repo.yml
+  tags: ['never', 'install', 'install-git-repo', 'deploy']
+
+- import_tasks: installed_private_git_repo.yml
+  tags: ['never', 'install', 'install-private-git-repo', 'deploy']
+
+- import_tasks: present.yml
+  tags: ['never', 'present', 'stow', 'deploy']
+
+- shell: /bin/echo "You need to execure playbook with specified tags"

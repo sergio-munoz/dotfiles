@@ -1,0 +1,27 @@
+---
+global_hosts: local
+ansible_connection: local
+stow_user: username
+stow_dotfiles: "{{ ansible_env.HOME }}/Data/Git/dotfiles/settings"
+stow_target: "{{ ansible_env.HOME }}"
+pkgs:
+  stow_packages:
+    - vim
+    - ideavimrc
+    - zshrc
+    - gitconfig
+  homebrew_packages:
+    - antigen
+  git_packages:
+    - vundle-git:
+      repo: https://github.com/VundleVim/Vundle.vim.git
+      dest: "{{ ansible_env.HOME }}/.vim/bundle/Vundle.vim"
+  priv_git_packages:
+    - terminal-settings:
+      repo: https://gitlab.private/public-dotfiles/terminal-settings.git
+      dest: "{{ stow_dotfiles }}"
+    - terminal-settings:
+      repo: https://gitlab.private/public-dotfiles/bash-settings.git
+      dest: "{{ stow_dotfiles }}"
+zsh_antigen_path: "{{ ansible_env.HOME }}/.antigen"
+zsh_user: username

@@ -1,0 +1,11 @@
+# Run with --become or enable at group_vars with `become: yes` when using -t "install-module"
+- name: Ensure plugin modules folder exists
+  ansible.builtin.file:
+    path: "{{ stow_module_install_loc | default('/usr/share/ansible/plugins/modules') }}"
+    state: directory
+    recurse: yes
+
+- name: Install Stow ansible module
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/caian-org/ansible-stow/v0.1.4/stow
+    dest: "{{ stow_module_install_loc | default('/usr/share/ansible/plugins/modules') }}"

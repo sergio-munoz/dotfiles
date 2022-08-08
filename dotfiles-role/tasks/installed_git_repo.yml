@@ -1,0 +1,6 @@
+- name: Install a package using git
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - "{{ pkgs.git_packages }}"

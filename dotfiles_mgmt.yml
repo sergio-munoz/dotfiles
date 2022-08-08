@@ -1,0 +1,6 @@
+---
+- name: "Dotfiles Management"
+  hosts: "{{ global_hosts }}"
+
+  roles:
+    - role: dotfiles-role  # -t install,present

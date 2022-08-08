@@ -1,0 +1,8 @@
+- name: Download dotfiles from Git
+  ansible.builtin.git:
+    repo: "{{ item }}"
+    dest: "{{ stow_dotfiles }}"
+  environment:
+    - GIT_SSL_NO_VERIFY: "true"
+  with_items:
+    - "{{ pkgs.dotfiles_packages }}"

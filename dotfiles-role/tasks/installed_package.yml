@@ -1,0 +1,6 @@
+- name: Sets up a configuration using Stow
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ pkgs.homebrew_packages }}"

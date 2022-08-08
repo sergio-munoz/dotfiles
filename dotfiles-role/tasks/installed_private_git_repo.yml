@@ -1,0 +1,8 @@
+- name: Download settings
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }"
+  environment:
+    - GIT_SSL_NO_VERIFY: "true"
+  with_items:
+    - "{{ pkgs.priv_git_packages }}"

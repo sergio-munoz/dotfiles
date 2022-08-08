@@ -1,0 +1,34 @@
+---
+stow_user: "{{ ansible_user }}"
+stow_dotfiles: "{{ ansible_env.HOME }}"
+stow_target: "{{ ansible_env.HOME }}"
+
+pkgs: None
+# pkgs:
+#   stow_packages:
+#     -  zsh
+#   homebrew_packages:
+#     - oh-my-zsh
+#   priv_git_packages:  # (private git install)
+#     - terminal-settings:
+#       repo: https://gitlab.private/public-dotfiles/terminal-settings.git
+#       dest: "{{ stow_dotfiles }}"
+#   git_packages:
+#     - vundle-git:
+#       repo: https://github.com/VundleVim/Vundle.vim.git
+#       dest: ~/.vim/bundle/Vundle.vim
+
+# Install module location
+## Macos can't write to /usr/share so download it to your .ansible folder
+stow_module_install_loc: "{{ ansible_env.HOME }}/.ansible/plugins/modules"
+zsh_antigen_path: "{{ ansible_env.HOME }}/.antigen"
+zsh_user: "{{ ansible_user }}"
+#zsh_antigen_path: 
+  #- /usr/local/sbin
+  #- /usr/local/bin
+  #- /usr/sbin
+  #- /usr/bin
+  #- /sbin
+  #- /bin
+zsh_antigen_version: master
+

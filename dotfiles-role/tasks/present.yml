@@ -1,0 +1,8 @@
+- name: Sets up a configuration using Stow
+  stow:
+    state: present
+    package: "{{ item }}"
+    dir: "{{ stow_dotfiles }}"
+    target: "{{ stow_target }}"
+  with_items:
+    - "{{ pkgs.stow_packages }}"
