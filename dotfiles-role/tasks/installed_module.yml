@@ -1,3 +1,6 @@
+---
+# tags: install,install-module
+
 # Run with --become or enable at group_vars with `become: yes` when using -t "install-module"
 - name: Ensure plugin modules folder exists
   ansible.builtin.file:

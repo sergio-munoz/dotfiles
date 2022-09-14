@@ -3,8 +3,7 @@ stow_user: "{{ ansible_user }}"
 stow_dotfiles: "{{ ansible_env.HOME }}"
 stow_target: "{{ ansible_env.HOME }}"
 
-pkgs: None
-# pkgs:
+pkgs:
 #   stow_packages:
 #     -  zsh
 #   homebrew_packages:

@@ -1,3 +1,5 @@
+---
+# install,install-package
 - name: Sets up a configuration using Stow
   homebrew:
     name: "{{ item }}"

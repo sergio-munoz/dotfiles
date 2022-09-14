@@ -1,4 +1,6 @@
-- name: Install a package using git
+---
+# tags: install,clone-git-repo
+- name: Clone a package using git
   ansible.builtin.git:
     repo: "{{ item.repo }}"
     dest: "{{ item.dest }}"
