@@ -11,6 +11,9 @@
 - import_tasks: installed_module.yml
   tags: ['never', 'install', 'install-module', 'deploy']
 
+- import_tasks: installed_package.yml
+  tags: ['never', 'install', 'install-package', 'brew-install', 'deploy']
+
 - import_tasks: installed_oh_my_zsh.yml
   tags: ['never', 'install', 'install-oh-my-zsh', 'deploy']
 
@@ -25,5 +28,8 @@
 
 - import_tasks: stowed.yml
   tags: ['never', 'stow', 'deploy']
+
+- import_tasks: brew_started_service.yml
+  tags: ['never', 'brew-start', 'deploy']
 
 - shell: /bin/echo "You need to execure playbook with specified tags"

@@ -1,6 +1,6 @@
 ---
-# install,install-package
-- name: Sets up a configuration using Stow
+# tags: brew-install
+- name: Installs a package using brew
   homebrew:
     name: "{{ item }}"
     state: present

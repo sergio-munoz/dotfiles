@@ -1,0 +1,7 @@
+---
+# tags: brew-start
+- name: Start service using brew
+  command: "/usr/local/bin/brew services start {{ item }}"
+  with_items:
+    - "{{ pkgs.homebrew_services }}"
+
